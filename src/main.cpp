@@ -16,7 +16,7 @@ int main()
     yNature = std::make_unique<Miel>(std::move(yNature));
 
     yGrec = std::make_unique<Granola>(std::move(yGrec));
-    yGrec = std::make_unique<Granola>(std::move(yGrec));
+    yGrec = std::make_unique<Chocolat>(std::move(yGrec));
 
 
 

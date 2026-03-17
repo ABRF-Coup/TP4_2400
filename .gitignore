@@ -1,2 +1,8 @@
 /build
 /.vscode
+.vs/
+out/
+build/
+*.log
+*.exe
+*.obj
