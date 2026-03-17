@@ -9,4 +9,4 @@ include_directories(include)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
-add_executable(TonYogourt ${SOURCES})
+add_executable(TonYogourt ${SOURCES} "include/Garnitures/Miel.h" "include/Garnitures/Chocolat.h" "src/Garnitures/Miel.cpp" "include/Garnitures/Granola.h" "src/Garnitures/Granola.cpp" "src/Garnitures/Chocolat.cpp")
