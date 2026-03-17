@@ -23,11 +23,11 @@ events:
       
       The output was:
       0
-      Compilateur d'optimisation Microsoft (R) C/C++ version 19.44.35215 pour x64
+      Compilateur d'optimisation Microsoft (R) C/C++ version 19.44.35225 pour x64
       Copyright (C) Microsoft Corporation. Tous droits réservés.
       
       CMakeCCompilerId.c
-      Microsoft (R) Incremental Linker Version 14.44.35215.0
+      Microsoft (R) Incremental Linker Version 14.44.35225.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       /out:CMakeCCompilerId.exe 
@@ -39,7 +39,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/Renée-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/3.31.6-msvc6/CompilerIdC/CMakeCCompilerId.exe
+        C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/3.31.6-msvc6/CompilerIdC/CMakeCCompilerId.exe
       
   -
     kind: "message-v1"
@@ -51,7 +51,7 @@ events:
     message: |
       Detecting C compiler /showIncludes prefix:
         main.c
-        Remarque : inclusion du fichier :  C:\\Users\\Renée-Francine\\Desktop\\Matiere\\LOG2400\\TonYogourt\\gabarit_tp4_log2400-main\\out\\build\\x64-Debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Remarque : inclusion du fichier :  C:\\Users\\sarah\\Desktop\\Tp2400\\TP4_2400\\out\\build\\x64-Debug\\CMakeFiles\\ShowIncludes\\foo.h
         
       Found prefix "Remarque : inclusion du fichier :  "
   -
@@ -69,11 +69,11 @@ events:
       
       The output was:
       0
-      Compilateur d'optimisation Microsoft (R) C/C++ version 19.44.35215 pour x64
+      Compilateur d'optimisation Microsoft (R) C/C++ version 19.44.35225 pour x64
       Copyright (C) Microsoft Corporation. Tous droits réservés.
       
       CMakeCXXCompilerId.cpp
-      Microsoft (R) Incremental Linker Version 14.44.35215.0
+      Microsoft (R) Incremental Linker Version 14.44.35225.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       /out:CMakeCXXCompilerId.exe 
@@ -85,7 +85,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/Renée-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CMakeCXXCompilerId.exe
+        C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CMakeCXXCompilerId.exe
       
   -
     kind: "message-v1"
@@ -97,7 +97,7 @@ events:
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
-        Remarque : inclusion du fichier :  C:\\Users\\Renée-Francine\\Desktop\\Matiere\\LOG2400\\TonYogourt\\gabarit_tp4_log2400-main\\out\\build\\x64-Debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Remarque : inclusion du fichier :  C:\\Users\\sarah\\Desktop\\Tp2400\\TP4_2400\\out\\build\\x64-Debug\\CMakeFiles\\ShowIncludes\\foo.h
         
       Found prefix "Remarque : inclusion du fichier :  "
   -
@@ -109,8 +109,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-4h5lyw"
-      binary: "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-4h5lyw"
+      source: "C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-tjhxo1"
+      binary: "C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-tjhxo1"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -119,11 +119,11 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Renée-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-4h5lyw'
+        Change Dir: 'C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-tjhxo1'
         
-        Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_d951f
-        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_d951f.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_d951f.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
-        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_d951f.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d951f.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_d951f.exe /implib:cmTC_d951f.lib /pdb:cmTC_d951f.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_2d9fc
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_2d9fc.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_2d9fc.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_2d9fc.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_2d9fc.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_2d9fc.exe /implib:cmTC_2d9fc.lib /pdb:cmTC_2d9fc.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -152,7 +152,7 @@ events:
       - "CMakeLists.txt:3 (project)"
     message: |
       Running the C compiler's linker: "C:/PROGRA~1/MIB055~1/2022/COMMUN~1/VC/Tools/MSVC/1444~1.352/bin/Hostx64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.44.35215.0
+      Microsoft (R) Incremental Linker Version 14.44.35225.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
@@ -163,8 +163,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-ijo7dm"
-      binary: "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-ijo7dm"
+      source: "C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-om7clv"
+      binary: "C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-om7clv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -174,11 +174,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Renée-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-ijo7dm'
+        Change Dir: 'C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-om7clv'
         
-        Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_35377
-        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_35377.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_35377.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_35377.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_35377.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_35377.exe /implib:cmTC_35377.lib /pdb:cmTC_35377.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_6731a
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_6731a.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_6731a.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_6731a.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_6731a.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_6731a.exe /implib:cmTC_6731a.lib /pdb:cmTC_6731a.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -207,6 +207,6 @@ events:
       - "CMakeLists.txt:3 (project)"
     message: |
       Running the CXX compiler's linker: "C:/PROGRA~1/MIB055~1/2022/COMMUN~1/VC/Tools/MSVC/1444~1.352/bin/Hostx64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.44.35215.0
+      Microsoft (R) Incremental Linker Version 14.44.35225.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
 ...

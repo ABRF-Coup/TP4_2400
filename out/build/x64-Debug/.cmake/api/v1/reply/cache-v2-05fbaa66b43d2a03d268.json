@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug"
+			"value" : "c:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -123,10 +123,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe"
 		},
 		{
@@ -235,10 +235,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe"
 		},
 		{
@@ -483,7 +483,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main"
+			"value" : "C:/Users/sarah/Desktop/Tp2400/TP4_2400"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -555,7 +555,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/install/x64-Debug"
+			"value" : "C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/install/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -577,10 +577,6 @@
 			"name" : "CMAKE_MAKE_PROGRAM",
 			"properties" : 
 			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
 				{
 					"name" : "HELPSTRING",
 					"value" : "make program"
@@ -1095,7 +1091,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main/out/build/x64-Debug"
+			"value" : "C:/Users/sarah/Desktop/Tp2400/TP4_2400/out/build/x64-Debug"
 		},
 		{
 			"name" : "TonYogourt_IS_TOP_LEVEL",
@@ -1119,7 +1115,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Ren\u00e9e-Francine/Desktop/Matiere/LOG2400/TonYogourt/gabarit_tp4_log2400-main"
+			"value" : "C:/Users/sarah/Desktop/Tp2400/TP4_2400"
 		}
 	],
 	"kind" : "cache",

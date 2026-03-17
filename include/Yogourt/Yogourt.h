@@ -14,6 +14,7 @@ public:
     Yogourt(std::string d) : description(d) {}
     virtual std::string obtenirDescription() { return description; }
     virtual double obtenirPrix() = 0;
+    virtual ~Yogourt() = default;
 private:
     std::string description;
 };

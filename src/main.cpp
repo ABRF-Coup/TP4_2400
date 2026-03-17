@@ -1,12 +1,15 @@
 #include <iostream>
 #include "Yogourt/YogourtNature.h"
 #include "Yogourt/YogourtGrec.h"
+#include "Garnitures/Fruit.h"
 #include "ui/ConsoleColors.h"
 
 int main()
 {
     std::unique_ptr<Yogourt> yNature = std::make_unique<YogourtNature>();
     std::unique_ptr<Yogourt> yGrec = std::make_unique<YogourtGrec>();
+
+    yNature = std::make_unique<Fruit>(std::move(yNature));
 
 
     std::cout << ConsoleColor::yellow << yNature->obtenirDescription() << ConsoleColor::reset << std::endl;
