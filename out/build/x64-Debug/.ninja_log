@@ -1,0 +1,9 @@
+# ninja log v6
+60	215	7954740125305454	CMakeFiles/TonYogourt.dir/src/pattern2/Pattern2.cpp.obj	ed1c4aa842dfefa4
+10	534	7954740124810686	CMakeFiles/TonYogourt.dir/src/Yogourt/YogourtGrec.cpp.obj	6d76f3ecc4d93f7b
+29	536	7954740124994333	CMakeFiles/TonYogourt.dir/src/Yogourt/YogourtNature.cpp.obj	7b8cf06dc6fbe9a1
+46	735	7954740125143745	CMakeFiles/TonYogourt.dir/src/main.cpp.obj	ec7b59ae6bde7bca
+735	1315	7954740131939379	TonYogourt.exe	f1c8ac67bbfbcc6
+22	375	7954740463973871	CMakeFiles/TonYogourt.dir/src/Yogourt/YogourtNature.cpp.obj	7b8cf06dc6fbe9a1
+9	403	7954740463813867	CMakeFiles/TonYogourt.dir/src/Yogourt/YogourtGrec.cpp.obj	6d76f3ecc4d93f7b
+404	635	7954740467829246	TonYogourt.exe	f1c8ac67bbfbcc6
