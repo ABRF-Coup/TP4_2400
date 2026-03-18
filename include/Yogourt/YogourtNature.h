@@ -5,8 +5,9 @@
 
 class YogourtNature : public Yogourt {
 public:
-	YogourtNature();
-	virtual double obtenirPrix() override;
+	YogourtNature() = default;
+	virtual double obtenirPrix() const override;
+	virtual std::string obtenirDescription() const override;
 };
 
 #endif

@@ -5,12 +5,12 @@
 
 Fruit::Fruit(std::unique_ptr<Yogourt> y) : Garniture(std::move(y)) {}
 
-std::string Fruit::obtenirDescription()
+std::string Fruit::obtenirDescription() const
 {
-    return obtenirBase()->obtenirDescription() + " + fruits";
+    return yogourtEnvelope->obtenirDescription() + " + fruits";
 }
 
-double Fruit::obtenirPrix()
+double Fruit::obtenirPrix() const
 {
-    return obtenirBase()->obtenirPrix() + 1.00;
+    return yogourtEnvelope->obtenirPrix() + 1.00;
 }

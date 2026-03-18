@@ -1,9 +1,15 @@
 #include "Yogourt/YogourtNature.h"
 
 
-YogourtNature::YogourtNature() : Yogourt("Yogourt Nature") {}
 
-double YogourtNature::obtenirPrix()
+double YogourtNature::obtenirPrix() const
 {
 	return 2.00;
 }
+
+
+std::string YogourtNature::obtenirDescription() const {
+	return "Yogourt Nature";
+}
+
+

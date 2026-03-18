@@ -5,12 +5,12 @@
 
 Granola::Granola(std::unique_ptr<Yogourt> y) : Garniture(std::move(y)) {}
 
-std::string Granola::obtenirDescription()
+std::string Granola::obtenirDescription() const
 {
-    return obtenirBase()->obtenirDescription() + " + granola";
+    return yogourtEnvelope->obtenirDescription() + " + granola";
 }
 
-double Granola::obtenirPrix()
+double Granola::obtenirPrix() const
 {
-    return obtenirBase()->obtenirPrix() + 0.80;
+    return yogourtEnvelope->obtenirPrix() + 0.80;
 }

@@ -5,12 +5,17 @@
 #include "Garnitures/Chocolat.h"
 #include "Garnitures/Granola.h"
 #include "Garnitures/Miel.h"
+#include "Paiement/StrategiePrevente.h"
+#include "Paiement/StrategieVenteEclaire.h"
 #include "ui/ConsoleColors.h"
 
 int main()
 {
     std::unique_ptr<Yogourt> yNature = std::make_unique<YogourtNature>();
     std::unique_ptr<Yogourt> yGrec = std::make_unique<YogourtGrec>();
+    std::unique_ptr<StrategiePaiement> strategie = std::make_unique<StrategieVenteEclaire>();
+    std::unique_ptr<StrategiePaiement> strategie2 = std::make_unique<StrategiePrevente>();
+
 
     yNature = std::make_unique<Fruit>(std::move(yNature));
     yNature = std::make_unique<Miel>(std::move(yNature));
@@ -25,9 +30,19 @@ int main()
     std::cout << ConsoleColor::yellow << yNature->obtenirDescription() << ConsoleColor::reset << std::endl;
     std::cout << ConsoleColor::cyan << yNature->obtenirPrix() << ConsoleColor::reset << std::endl;
 
+    double totalFinal = strategie->calculerPrixFinal(yNature->obtenirPrix());
+
+    std::cout << "Mode: " << strategie->obtenirNom() << std::endl;
+    std::cout << "Total final: " << totalFinal << " CAD" << std::endl;
+
 
     std::cout << ConsoleColor::yellow << yGrec->obtenirDescription() << ConsoleColor::reset << std::endl;
     std::cout << ConsoleColor::cyan << yGrec->obtenirPrix() << ConsoleColor::reset << std::endl;
+
+    double totalFinal2 = strategie2->calculerPrixFinal(yGrec->obtenirPrix());
+
+    std::cout << "Mode: " << strategie2->obtenirNom() << std::endl;
+    std::cout << "Total final: " << totalFinal2 << " CAD" << std::endl;
    
     /*std::cout << ConsoleColor::cyan << "Je suis Pattern1 :  " << p1.getValue() << ConsoleColor::reset << std::endl;
     std::cout << ConsoleColor::cyan << "Je suis Pattern2 :  " << p2.getValue() << ConsoleColor::reset << std::endl;

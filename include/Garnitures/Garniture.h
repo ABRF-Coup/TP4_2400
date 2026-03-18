@@ -5,7 +5,7 @@
 
 #include <memory>
 #include <string>
-#include <utility>
+
 
 // -- TODO : Changer le nom de la classe du fichier et puis ajouter toutes les méthodes nécessaires pour cette composante 
 // Composante = Patron de conception, classe, etc etc
@@ -16,14 +16,14 @@
 
 class Garniture : public Yogourt{
 public:
-    Garniture(std::unique_ptr<Yogourt> b) : yogourtEnvelope(std::move(b)) {}
+    Garniture(std::unique_ptr<Yogourt> y) : yogourtEnvelope(std::move(y)) {}
+    virtual ~Garniture() = default;
 
-    Yogourt * obtenirBase() const { return yogourtEnvelope.get(); }
+    std::string obtenirDescription() const override = 0;
+    double obtenirPrix() const override = 0;
+   
 
-    std::string obtenirDescription() override = 0;
-    double obtenirPrix() override = 0;
-
-private:
+protected:
     std::unique_ptr<Yogourt> yogourtEnvelope;
 };
 

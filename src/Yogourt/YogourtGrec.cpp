@@ -1,9 +1,16 @@
 #include "Yogourt/YogourtGrec.h"
 
 
-YogourtGrec::YogourtGrec() : Yogourt("Yogourt Grec") {}
 
-double YogourtGrec::obtenirPrix()
+
+double YogourtGrec::obtenirPrix() const
 {
 	return 2.50;
 }
+
+
+std::string YogourtGrec::obtenirDescription() const {
+	return "Yogourt Grec";
+}
+
+

@@ -10,13 +10,9 @@
 // Composante = Patron de conception, classe, etc etc
 class Yogourt {
 public:
-    Yogourt() {}
-    Yogourt(std::string d) : description(d) {}
-    virtual std::string obtenirDescription() { return description; }
-    virtual double obtenirPrix() = 0;
+    virtual std::string obtenirDescription() const = 0;
+    virtual double obtenirPrix() const = 0;
     virtual ~Yogourt() = default;
-private:
-    std::string description;
 };
 
 #endif

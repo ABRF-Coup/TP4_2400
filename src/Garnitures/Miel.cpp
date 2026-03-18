@@ -5,12 +5,12 @@
 
 Miel::Miel(std::unique_ptr<Yogourt> y) : Garniture(std::move(y)) {}
 
-std::string Miel::obtenirDescription()
+std::string Miel::obtenirDescription() const
 {
-    return obtenirBase()->obtenirDescription() + " + miel";
+    return yogourtEnvelope->obtenirDescription() + " + miel";
 }
 
-double Miel::obtenirPrix()
+double Miel::obtenirPrix() const
 {
-    return obtenirBase()->obtenirPrix() + 0.60;
+    return yogourtEnvelope->obtenirPrix() + 0.60;
 }

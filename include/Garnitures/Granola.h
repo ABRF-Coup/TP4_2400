@@ -7,9 +7,9 @@
 
 class Granola : public Garniture {
 public:
-    Granola(std::unique_ptr<Yogourt> f);
-    std::string obtenirDescription() override;
-    double obtenirPrix() override;
+    Granola(std::unique_ptr<Yogourt> y);
+    std::string obtenirDescription() const override;
+    double obtenirPrix() const override;
 };
 
 #endif
