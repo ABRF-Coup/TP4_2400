@@ -24,7 +24,7 @@ int main()
     yGrec = std::make_unique<Chocolat>(std::move(yGrec));
 
 
-
+    std::cout << ConsoleColor::green << "Bienvenue dans notre boutique de yogourt!" << ConsoleColor::reset << std::endl;
 
 
     std::cout << ConsoleColor::yellow << yNature->obtenirDescription() << ConsoleColor::reset << std::endl;
