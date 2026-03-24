@@ -9,4 +9,4 @@ include_directories(include)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
-add_executable(TonYogourt ${SOURCES} "include/Garnitures/Miel.h" "include/Garnitures/Chocolat.h" "src/Garnitures/Miel.cpp" "include/Garnitures/Granola.h" "src/Garnitures/Granola.cpp" "src/Garnitures/Chocolat.cpp" "include/Paiement/StrategiePaiement.h" "include/Paiement/StrategiePrevente.h" "src/Paiement/StrategiePrevente.cpp" "src/Paiement/StrategieVenteEclaire.cpp")
+add_executable(TonYogourt ${SOURCES} "include/Garnitures/Miel.h" "include/Garnitures/Chocolat.h" "src/Garnitures/Miel.cpp" "include/Garnitures/Granola.h" "src/Garnitures/Granola.cpp" "src/Garnitures/Chocolat.cpp" "include/Paiement/StrategiePaiement.h" "include/Paiement/StrategiePrevente.h" "src/Paiement/StrategiePrevente.cpp" "src/Paiement/StrategieVenteEclaire.cpp" "src/Commande/Commande.cpp")
