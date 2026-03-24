@@ -84,9 +84,3 @@ Inventaire::Inventaire()
 {
     initialiserStock();
 }
-
-
-
-
-
-

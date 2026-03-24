@@ -25,10 +25,6 @@ int main()
     inventaire.retirerStock("Fruits");
 
 
-    
-
-
-    
 
 
 
