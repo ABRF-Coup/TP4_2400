@@ -8,10 +8,31 @@
 #include "Paiement/StrategiePrevente.h"
 #include "Paiement/StrategieVenteEclaire.h"
 #include "ui/ConsoleColors.h"
+#include "Inventaire/Inventaire.h"
 
 int main()
 {
+    std::cout << ConsoleColor::green << "Bienvenue dans notre boutique de yogourt!" << ConsoleColor::reset << std::endl;
+    Inventaire inventaire;
+
+    
+    inventaire.afficherInventaire();
     std::unique_ptr<Yogourt> yNature = std::make_unique<YogourtNature>();
+    yNature = std::make_unique<Fruit>(std::move(yNature));
+   
+
+    std::cout << ConsoleColor::yellow << yNature->obtenirDescription() << ConsoleColor::reset << std::endl;
+    inventaire.retirerStock("Fruits");
+
+
+    
+
+
+    
+
+
+
+    /*std::unique_ptr<Yogourt> yNature = std::make_unique<YogourtNature>();
     std::unique_ptr<Yogourt> yGrec = std::make_unique<YogourtGrec>();
     std::unique_ptr<StrategiePaiement> strategie = std::make_unique<StrategieVenteEclaire>();
     std::unique_ptr<StrategiePaiement> strategie2 = std::make_unique<StrategiePrevente>();
