@@ -10,40 +10,46 @@
 #include "Commande/Commande.h"
 #include "ui/ConsoleColors.h"
 #include "Inventaire/Inventaire.h"
+#include "Phase/Phase.h"
+#include "Phase/PhaseInitiale.h"
+
+
 
 int main()
 {
 
 
 
-    /*Commande c;
+    Commande c;
 
     c.setIndexActif(1);
 
     c.afficher();
 
-    c.ajouterBase("grec");
+    c.preparer();
+
+    c.ajoutBase("grec");
 
     c.afficher();
 
-    c.annulation();
+    c.annuler();
 
     c.afficher();
 
-    c.ajouterGarniture("chocolat");
+    c.ajoutGarniture("chocolat");
 
     c.afficher();
 
-    c.ajouterGarniture("chocolat");
+    c.ajoutGarniture("chocolat");
 
     c.afficher();
 
-    c.ajouterGarniture("fruits");
+    c.ajoutGarniture("fruits");
 
     c.afficher();
 
 
-    c.annulation();
+    c.annuler();
 
     c.afficher();
 
@@ -51,9 +57,13 @@ int main()
 
     c.afficher();
 
+    c.terminer();
+
     c.setStrategie(std::make_unique<StrategieVenteEclaire>());
 
     c.afficher();
+
+    c.preparer();
 
     c.calculerTotal();
 

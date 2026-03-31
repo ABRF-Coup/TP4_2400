@@ -6,6 +6,7 @@
 #include "Garnitures/Miel.h"
 #include "Yogourt/YogourtGrec.h"
 #include "Yogourt/YogourtNature.h"
+#include "Phase/PhaseInitiale.h"
 #include <iostream>
 
 
@@ -18,13 +19,16 @@ void Commande::setIndexActif(int indexActif)
 Commande::Commande()
 {
     indexActif_ = 0;
+    phaseActuelle = std::make_unique<PhaseInitiale>();
 }
 
 
+void Commande::paiement(){
+    phaseActuelle->payer();
+}
 
 
-
-void Commande::ajouterBase(const std::string& type)
+void Commande::executerAjouterBase(const std::string& type)
 {
     if (!base_[indexActif_].empty()) {
         return;
@@ -40,9 +44,15 @@ void Commande::ajouterBase(const std::string& type)
 
 }
 
+void Commande::ajoutBase(const std::string& type){
+    phaseActuelle->ajouterBase(this,type);
+}
 
-bool Commande::ajouterGarniture(const std::string& nomGarniture){
-    if (base_[indexActif_].empty()) return false;
+
+
+
+void Commande::executerAjouterGarniture(const std::string& nomGarniture){
+    if (base_[indexActif_].empty()) return ;
 
     if (inventaire_.estDisponible(nomGarniture)) {
         inventaire_.retirerStock(nomGarniture);
@@ -51,17 +61,22 @@ bool Commande::ajouterGarniture(const std::string& nomGarniture){
         redo_[indexActif_].clear();
 
         std::cout << "Garniture '" << nomGarniture << "' ajoutee." << std::endl;
-        return true;
+        return;
     }
 
     std::cout << "Stock insuffisant pour la garniture '" << nomGarniture << "'." << std::endl;
-    return false;
+    return;
 
 
 }
 
+void Commande::ajoutGarniture(const std::string& nom){
+    phaseActuelle->ajouterGarniture(this, nom);
+}
 
-void Commande::annulation() {
+
+
+void Commande::executerAnnulation() {
     if (historiqueNomsGarnitures_[indexActif_].empty()) {
         std::cout << "Aucune garniture a annuler." << std::endl;
         return;
@@ -78,8 +93,14 @@ void Commande::annulation() {
     std::cout << "Derniere garniture annulee." << std::endl;
 }
 
+void Commande::annuler(){
+    phaseActuelle->annuler(this);
+}
 
-void Commande::retablissement() {
+
+
+
+void Commande::executerRetablissement() {
     if (redo_[indexActif_].empty()) {
         std::cout << "Aucune garniture a retablir." << std::endl;
         return;
@@ -96,6 +117,12 @@ void Commande::retablissement() {
     }
 }
 
+void Commande::retablissement(){
+    phaseActuelle->retablir(this);
+}
+
+
+
 
 void Commande::reconstruireYogourt(int index) {
     if (base_[index].empty()) {
@@ -103,7 +130,7 @@ void Commande::reconstruireYogourt(int index) {
         return;
     }
 
-    
+
 
     std::unique_ptr<Yogourt> nouveau;
     if (base_[index] == "nature") 
@@ -144,6 +171,30 @@ void Commande::setStrategie(std::unique_ptr<StrategiePaiement> s){
         sp = std::move(s);
         std::cout << "Mode de paiement actif: " << sp->obtenirNom() << "." << std::endl;
 }
+
+void Commande::setPhase(std::unique_ptr<Phase> p){
+    phaseActuelle = std::move(p);
+}
+
+void Commande::preparer(){
+    phaseActuelle->preparer(this);
+}
+
+
+void Commande::terminer(){
+    phaseActuelle->terminer();
+}
+
+
+bool Commande::existanceYogourt() const
+    {
+        if(yogourts_[indexActif_] == nullptr){
+            return false;
+        }
+
+        return true;
+    }
+
 
 
 void Commande::afficher() const {
