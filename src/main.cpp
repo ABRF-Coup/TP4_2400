@@ -7,12 +7,60 @@
 #include "Garnitures/Miel.h"
 #include "Paiement/StrategiePrevente.h"
 #include "Paiement/StrategieVenteEclaire.h"
+#include "Commande/Commande.h"
 #include "ui/ConsoleColors.h"
 #include "Inventaire/Inventaire.h"
 
 int main()
 {
-    std::cout << ConsoleColor::green << "Bienvenue dans notre boutique de yogourt!" << ConsoleColor::reset << std::endl;
+
+
+
+    /*Commande c;
+
+    c.setIndexActif(1);
+
+    c.afficher();
+
+    c.ajouterBase("grec");
+
+    c.afficher();
+
+    c.annulation();
+
+    c.afficher();
+
+    c.ajouterGarniture("chocolat");
+
+    c.afficher();
+
+    c.ajouterGarniture("chocolat");
+
+    c.afficher();
+
+    c.ajouterGarniture("fruits");
+
+    c.afficher();
+
+
+    c.annulation();
+
+    c.afficher();
+
+    c.retablissement();
+
+    c.afficher();
+
+    c.setStrategie(std::make_unique<StrategieVenteEclaire>());
+
+    c.afficher();
+
+    c.calculerTotal();
+
+    c.afficher();
+
+
+    /*std::cout << ConsoleColor::green << "Bienvenue dans notre boutique de yogourt!" << ConsoleColor::reset << std::endl;
     Inventaire inventaire;
 
     

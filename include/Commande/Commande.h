@@ -13,18 +13,30 @@ class Commande {
 public:
     Commande();
     ~Commande()=default;
+
     void ajouterBase(const std::string& type);
-    void ajouterGarniture(const std::string& nom);
+    bool ajouterGarniture(const std::string& nom);
+
     void annulation();
     void retablissement();
+
     void setIndexActif(int indexActif);
+    void reconstruireYogourt(int index);
+
+    void setStrategie(std::unique_ptr<StrategiePaiement> s);
+    double calculerTotal() const;
+
+    void afficher() const;
+    
     
     
 private:
     std::unique_ptr<StrategiePaiement> sp;
     int indexActif_;
-    std::vector<std::vector<std::unique_ptr<Yogourt>>> historique_[2];
-    std::vector<std::vector<std::string>> redo_[2];
+    std::string base_[2];
+    std::unique_ptr<Yogourt> yogourts_[2];
+    std::vector<std::string> redo_[2];
+    std::vector<std::string> historiqueNomsGarnitures_[2];
     Inventaire inventaire_;
 
 

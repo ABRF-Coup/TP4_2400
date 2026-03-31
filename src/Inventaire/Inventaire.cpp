@@ -12,6 +12,17 @@ void Inventaire::remettreStock(const std::string& nom)
 {
     auto it = stocks_.find(nom);
     
+    if (it != stocks_.end()) {
+        int ancienStock = it->second;
+        it->second++;
+        int nouveauStock = it->second;
+
+        std::cout << "[Stock] " << nom << " : " << ancienStock << " -> " << nouveauStock << std::endl;
+    } else {
+        // ypenser 
+        
+    }
+    
 }
 
 bool Inventaire::retirerStock(const std::string& nom)
@@ -21,7 +32,7 @@ bool Inventaire::retirerStock(const std::string& nom)
         if(it->second > 0){
             auto itAncien = it->second;
             auto itNouveau = it->second-1;
-            std::cout << "[Stock]" << nom << " : " << itAncien << " -> " << itNouveau << std::endl;
+            std::cout << "[Stock] " << nom << " : " << itAncien << " -> " << itNouveau << std::endl;
             it->second--;
             return true;
 
