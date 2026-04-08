@@ -20,8 +20,8 @@ class Phase{
         virtual void annuler(Commande* c)= 0;
         virtual void preparer(Commande* c)= 0;
         virtual void retablir(Commande* c)= 0;
-        virtual void terminer()= 0;
-        virtual void payer()= 0;
+        virtual void terminer(Commande* c)= 0;
+        virtual void payer(Commande* c)= 0;
 
 
 };

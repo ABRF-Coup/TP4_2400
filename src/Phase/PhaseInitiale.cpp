@@ -1,4 +1,5 @@
 #include "Phase/PhaseInitiale.h"
+#include "Phase/PhasePreparation.h"
 #include "Commande/Commande.h"
 #include <iostream>
 
@@ -26,12 +27,12 @@
     c->executerRetablissement();
 }
 
- void PhaseInitiale::payer(){
-    std::cout << "Paiement refuses etat Terminee requis (etat actuel: " << obtenirNom() << ")" << std::endl;
+ void PhaseInitiale::payer(Commande* c){
+    std::cout << "Paiement refuse: etat Terminee requis (etat actuel: " << obtenirNom() << ")" << std::endl;
 }
 
 
- void PhaseInitiale::terminer(){
+ void PhaseInitiale::terminer(Commande* c){
     std::cout << "La commande doit etre preparee avant d'etre terminee." << std::endl; 
 }
 
@@ -43,7 +44,7 @@
     }
     else{
         std::cout << "Preparation en cours ..." << std::endl;
-        /*c->setPhase(std::make_unique<PhasePreparation>());*/
+        c->setPhase(std::make_unique<PhasePreparation>());
     }
 }
 

@@ -6,14 +6,24 @@
 #include "Paiement/StrategiePaiement.h"
 #include "Inventaire/Inventaire.h"
 #include "Phase/Phase.h"
+#include "Observateur/Observateur.h"
 #include <memory>
 #include <string>
 #include <vector>
 
-class Commande {
+class Commande : public Observateur{
 public:
     Commande();
-    ~Commande()=default;
+    virtual ~Commande();
+
+    void mettreAJour(const std::string& article, bool enRupture) override;
+    const std::vector<std::string>& obtenirAbonnements() const override { return abonnements_; }
+
+    
+    void sabonner(const std::string& article);
+    void desabonner(const std::string& article);
+    void afficherAbonnements() const;
+
 
     void executerAjouterBase(const std::string& type);
     void ajoutBase(const std::string& type);
@@ -33,21 +43,38 @@ public:
     void terminer();
     void preparer();
 
+
+
     void paiement();
+    void executerPaiement();
+    void setStrategie(std::unique_ptr<StrategiePaiement> s);
+    StrategiePaiement* getStrategie();
+    void afficherDetailsCalcul() ;
+    double calculerSousTotal() const ;
+    double calculerTotal() const ;
+
     
 
 
     void setIndexActif(int indexActif);
+    int getIndexActif();
     void reconstruireYogourt(int index);
 
-    void setStrategie(std::unique_ptr<StrategiePaiement> s);
-    double calculerTotal() const;
+    
 
     void setPhase(std::unique_ptr<Phase> p);
+    std::string getPhaseNom() const;
 
     void afficher() const;
 
     bool existanceYogourt() const;
+
+
+    void afficherOptionsGarnitures() const;
+
+    void afficherInventaire() const;
+
+
     
     
     
@@ -60,6 +87,7 @@ private:
     std::vector<std::string> redo_[2];
     std::vector<std::string> historiqueNomsGarnitures_[2];
     Inventaire inventaire_;
+    std::vector<std::string> abonnements_;
 
 
 };

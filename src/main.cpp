@@ -1,127 +1,111 @@
 #include <iostream>
-#include "Yogourt/YogourtNature.h"
-#include "Yogourt/YogourtGrec.h"
-#include "Garnitures/Fruit.h"
-#include "Garnitures/Chocolat.h"
-#include "Garnitures/Granola.h"
-#include "Garnitures/Miel.h"
-#include "Paiement/StrategiePrevente.h"
-#include "Paiement/StrategieVenteEclaire.h"
+#include <string>
+#include <sstream>
+#include <memory>
 #include "Commande/Commande.h"
+#include "Paiement/StrategieVenteEclaire.h"
+#include "Paiement/StrategiePrevente.h"
+#include "Paiement/StrategiePoly.h"
 #include "ui/ConsoleColors.h"
-#include "Inventaire/Inventaire.h"
-#include "Phase/Phase.h"
-#include "Phase/PhaseInitiale.h"
 
 
-
-int main()
-{
-
-
-
-    Commande c;
-
-    c.setIndexActif(1);
-
-    c.afficher();
-
-    c.preparer();
-
-    c.ajoutBase("grec");
-
-    c.afficher();
-
-    c.annuler();
-
-    c.afficher();
-
-    c.ajoutGarniture("chocolat");
-
-    c.afficher();
-
-    c.ajoutGarniture("chocolat");
-
-    c.afficher();
-
-    c.ajoutGarniture("fruits");
-
-    c.afficher();
+void afficherAide() {
+    std::cout << ConsoleColor::cyan <<      "Commandes:" << ConsoleColor::reset << std::endl;
+    std::cout << "  c nature|grec           -> Ajouter un yogourt (max 2)" << std::endl;
+    std::cout << "  sel 1|2                 -> Selectionner le yogourt actif" << std::endl;
+    std::cout << "  f                       -> Ouvrir menu garnitures du yogourt actif" << std::endl;
+    std::cout << "  u                       -> Annuler derniere garniture du yogourt actif" << std::endl;
+    std::cout << "  r                       -> Refaire derniere garniture du yogourt actif" << std::endl;
+    std::cout << "  p                       -> Preparer la commande" << std::endl;
+    std::cout << "  t                       -> Terminer la commande" << std::endl;
+    std::cout << "  mode prev|eclair|poly   -> Changer le mode de paiement" << std::endl;
+    std::cout << "  pay                     -> Finaliser paiement (etat Terminee requis)" << std::endl;
+    std::cout << "  pay prev|eclair|poly    -> Alias mode + payer" << std::endl;
+    std::cout << "  total                   -> Afficher sous-total et total projete" << std::endl;
+    std::cout << "  sub article             -> S'abonner aux notifications d'un article" << std::endl;
+    std::cout << "  unsub article           -> Se desabonner d'un article" << std::endl;
+    std::cout << "  subs                    -> Afficher abonnements actifs" << std::endl;
+    std::cout << "  clear|cls               -> Nettoyer l'ecran" << std::endl;
+    std::cout << "  s                       -> Afficher les stocks" << std::endl;
+    std::cout << "  h                       -> Aide" << std::endl;
+    std::cout << "  q                       -> Quitter" << std::endl;
+}
 
 
-    c.annuler();
+void gererMenuGarnitures(Commande& c) {
+    std::string choix;
+    while (true) {
+        std::cout << "\n" << ConsoleColor::cyan << "Menu Garnitures" << ConsoleColor::reset << std::endl;
+        std::cout << "  Yogourt actif: #" << (c.getIndexActif() + 1) << std::endl;
+        c.afficherOptionsGarnitures();
+        std::cout << "  q -> retour menu principal" << std::endl;
+        
+        std::cout << ConsoleColor::magenta << "Choix garniture: " << ConsoleColor::reset;
+        std::cin >> choix;
+        if (choix == "q") { 
+            std::cout << ConsoleColor::cyan << "Retour au menu principal" << ConsoleColor::reset << std::endl;
+            std::cin.ignore(); break;
+         }
 
-    c.afficher();
+        if (choix == "1") c.ajoutGarniture("fruits");
+        else if (choix == "2") c.ajoutGarniture("granola");
+        else if (choix == "3") c.ajoutGarniture("miel");
+        else if (choix == "4") c.ajoutGarniture("chocolat");
+        
+    }
+}
 
-    c.retablissement();
+int main() {
+    Commande maCommande;
+    std::string ligne;
 
-    c.afficher();
+    std::cout << ConsoleColor::green << "Bienvenue sur TonYogourt !" << ConsoleColor::reset << std::endl;
+    afficherAide();
+    maCommande.afficher();
 
-    c.terminer();
+    while (std::getline(std::cin, ligne) && ligne != "q") {
+        if (ligne.empty()) continue;
+        std::stringstream ss(ligne);
+        std::string cmd, arg;
+        ss >> cmd >> arg;
 
-    c.setStrategie(std::make_unique<StrategieVenteEclaire>());
+        if (cmd == "c") maCommande.ajoutBase(arg);
+        else if (cmd == "sel") maCommande.setIndexActif(std::stoi(arg));
+        else if (cmd == "f") gererMenuGarnitures(maCommande);
+        else if (cmd == "u") maCommande.annuler();
+        else if (cmd == "r") maCommande.retablissement();
+        else if (cmd == "p") maCommande.preparer();
+        else if (cmd == "t") maCommande.terminer();
 
-    c.afficher();
-
-    c.preparer();
-
-    c.calculerTotal();
-
-    c.afficher();
-
-
-    /*std::cout << ConsoleColor::green << "Bienvenue dans notre boutique de yogourt!" << ConsoleColor::reset << std::endl;
-    Inventaire inventaire;
-
-    
-    inventaire.afficherInventaire();
-    std::unique_ptr<Yogourt> yNature = std::make_unique<YogourtNature>();
-    yNature = std::make_unique<Fruit>(std::move(yNature));
-   
-
-    std::cout << ConsoleColor::yellow << yNature->obtenirDescription() << ConsoleColor::reset << std::endl;
-    inventaire.retirerStock("Fruits");
-
-
-
-
-
-    /*std::unique_ptr<Yogourt> yNature = std::make_unique<YogourtNature>();
-    std::unique_ptr<Yogourt> yGrec = std::make_unique<YogourtGrec>();
-    std::unique_ptr<StrategiePaiement> strategie = std::make_unique<StrategieVenteEclaire>();
-    std::unique_ptr<StrategiePaiement> strategie2 = std::make_unique<StrategiePrevente>();
-
-
-    yNature = std::make_unique<Fruit>(std::move(yNature));
-    yNature = std::make_unique<Miel>(std::move(yNature));
-
-    yGrec = std::make_unique<Granola>(std::move(yGrec));
-    yGrec = std::make_unique<Chocolat>(std::move(yGrec));
-
-
-    std::cout << ConsoleColor::green << "Bienvenue dans notre boutique de yogourt!" << ConsoleColor::reset << std::endl;
+        else if (cmd == "sub") maCommande.sabonner(arg);
+        else if (cmd == "unsub") maCommande.desabonner(arg);
+        else if (cmd == "subs") maCommande.afficherAbonnements();
 
 
-    std::cout << ConsoleColor::yellow << yNature->obtenirDescription() << ConsoleColor::reset << std::endl;
-    std::cout << ConsoleColor::cyan << yNature->obtenirPrix() << ConsoleColor::reset << std::endl;
+        else if (cmd == "mode") {
+            if (arg == "eclair") maCommande.setStrategie(std::make_unique<StrategieVenteEclaire>());
+            else if (arg == "prev") maCommande.setStrategie(std::make_unique<StrategiePrevente>());
+            else if (arg == "poly") maCommande.setStrategie(std::make_unique<StrategiePoly>());
+        }
+        else if (cmd == "pay") {
+            if (arg == "eclair") maCommande.setStrategie(std::make_unique<StrategieVenteEclaire>());
+            else if (arg == "prev") maCommande.setStrategie(std::make_unique<StrategiePrevente>());
+            else if (arg == "poly") maCommande.setStrategie(std::make_unique<StrategiePoly>());
+            maCommande.paiement();
 
-    double totalFinal = strategie->calculerPrixFinal(yNature->obtenirPrix());
+            if (maCommande.getPhaseNom() == "Terminee" && maCommande.getStrategie() != nullptr) {
+                return 0;
+            }
+        }
+        else if (cmd == "total") maCommande.afficherDetailsCalcul();
+        else if (cmd == "s") {
+            std::cout << ConsoleColor::cyan << "Stocks:" << ConsoleColor::reset << std::endl;
+            maCommande.afficherInventaire();
+        }
+        else if (cmd == "h") afficherAide();
+        else if (cmd == "clear" || cmd == "cls") system(cmd.c_str());
 
-    std::cout << "Mode: " << strategie->obtenirNom() << std::endl;
-    std::cout << "Total final: " << totalFinal << " CAD" << std::endl;
-
-
-    std::cout << ConsoleColor::yellow << yGrec->obtenirDescription() << ConsoleColor::reset << std::endl;
-    std::cout << ConsoleColor::cyan << yGrec->obtenirPrix() << ConsoleColor::reset << std::endl;
-
-    double totalFinal2 = strategie2->calculerPrixFinal(yGrec->obtenirPrix());
-
-    std::cout << "Mode: " << strategie2->obtenirNom() << std::endl;
-    std::cout << "Total final: " << totalFinal2 << " CAD" << std::endl;
-   
-    /*std::cout << ConsoleColor::cyan << "Je suis Pattern1 :  " << p1.getValue() << ConsoleColor::reset << std::endl;
-    std::cout << ConsoleColor::cyan << "Je suis Pattern2 :  " << p2.getValue() << ConsoleColor::reset << std::endl;
-    std::cout << ConsoleColor::magenta << "Bon TP a tous :) " << ConsoleColor::reset << std::endl;*/
-
+        maCommande.afficher();
+    }
     return 0;
-};
+}

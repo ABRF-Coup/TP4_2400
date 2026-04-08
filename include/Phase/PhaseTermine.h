@@ -1,17 +1,16 @@
-#ifndef PHASE_INITIALE_H
-#define PHASE_INITIALE_H
+#ifndef PHASE_TERMINE_H
+#define PHASE_TERMINE_H
 
 #include "Phase/Phase.h"
 
 
-class PhaseInitiale:public Phase{
+class PhaseTermine:public Phase{
+
 
 public:
     
-    PhaseInitiale() = default;
-
-    // Tu DOIS ré-écrire toutes les signatures ici pour dire qu'elles existent
-    void ajouterBase(Commande* c, std::string type) override;
+    PhaseTermine() = default;
+    void ajouterBase(Commande* c,std::string type) override;
     void ajouterGarniture(Commande* c, std::string nomGarniture) override;
     std::string obtenirNom() const override;
     void annuler(Commande* c) override;
@@ -24,3 +23,4 @@ public:
 
 
 #endif
+
